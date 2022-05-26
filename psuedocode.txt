@@ -1,0 +1,34 @@
+Goal: Create a machine, that uses algothrims to detect Ones Learning Performance and give plans according. 
+
+What do I want my assistance to have: 
+1. Create plan
+2. Estimate Time
+3. Calculate how Much Free Time I have 
+4. Tips on, If I should Sleep for 8+ or if Caffine Will Help or 
+5. List my Priorty
+6. Make Sure I don't miss deadline
+7. Quiz Prep Guide.
+8. Tell me what I should Focus on the moment.
+9. Grade Calculator (NEed to contact a teacher, on how this works)
+
+
+Check User:
+1. Must have User Files
+    With all the info init
+
+Beginning:
+1. Learn the user
+  Ask Question: 
+    1. What do you want to achieve? (Give Option)
+    2. With the given Option
+    3. What courses are you taking (Give Option)
+    4. Priroty (class)
+    5. Wegihing of the class (list Priorty within the class)
+
+2. Have Plans
+
+3. Daily Check in
+    how much homework you have?
+    Quiz test?
+    Which you should priortize
+    

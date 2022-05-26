@@ -1,0 +1,17 @@
+# class Login(Elder):
+
+
+
+#   def __init__(self, master):
+#     Elder.__init__(self, master)
+#     # global login_Frame
+#     # login_Frame = Frame(master, height=500, width=500, bg="#D30589").pack()
+  
+#   # def loggingin(self):
+#   #   global username_Entry
+#   #   username_Entry = Entry(login_Frame).pack()
+#   #   def gettext():
+      
+#   #   username_Entry_entered = username_Entry.get()
+#   #   if username_Entry_entered == "1":
+#   #     print("Sucess")
