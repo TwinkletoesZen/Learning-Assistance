@@ -1,4 +1,5 @@
-
+from tkinter import *
+from tkinter import ttk
 
 
 class commands():
@@ -14,3 +15,8 @@ class commands():
     pressed = True
     return pressed == True
 
+  
+  def get_entry():
+    Submit_Button = ""
+    Submitted_Entry = Submit_Button.get()
+    print(Submitted_Entry)

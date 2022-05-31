@@ -1,14 +1,16 @@
-
-from ast import arg
-from curses.panel import bottom_panel
-from distutils import command
 from commandlist import *
 from tkinter import *
-from functools import partial #execute code before return WTF????
+from tkinter import ttk
+from functools import partial #execute code before return WT????
+
+basic_geometry = "800x450" 
 
 root = Tk()
 root.title("Monday")
 root.geometry("800x450")
+
+
+
 
 
 class Elder():
@@ -21,9 +23,43 @@ class Learning_User(Elder):
     return 
 
 
-
+  def Daily_Check_In(self, master):
+    master = Tk()
+    master.title("Daily Check In")
+    master.geometry(basic_geometry)
 
   
+
+  def Plan_Page(self, master):
+    master = Tk()
+    master.title("Your Plan")
+    master.geometry(basic_geometry)
+
+
+  def Homework_Page(self, master):
+    master = Tk()
+    master.title("Your HW Today")
+    master.geometry(basic_geometry)
+
+
+  def Time_Management_Page(self, master):
+    master = Tk()
+    master.title("Time is Money")
+    master.geometry(basic_geometry)
+
+  def Priorty_Page(self, master):
+    master = Tk()
+    master.title("Focus")
+    master.geometry(basic_geometry)
+
+  def GradeCalculator_Page(self, master):
+    master = Tk()
+    master.title("Good Luck")
+    master.geometry(basic_geometry)
+
+
+
+
 
   def Home_Page(self, master):
     master.destroy()
@@ -31,10 +67,13 @@ class Learning_User(Elder):
     master.title("Monday")
     master.geometry("800x450")
 
-
-    go_Homework_page = Button(master, text="Input \nHomework").grid(column=1, row=2)
-    go_Time_Management_page = Button(master, text="Manage \nTime", command="").grid(column=2, row=2)
-    go_Priorty_page = Button(master, text="Priorty", command="").grid(column=3, row=2)
+    i = 1
+    go_Plan_Page = Button(master, text="Plans\nfor Today", command= lambda: Learning_User.Plan_Page(self, master)).grid(column=i, row=2)
+    go_Homework_page = Button(master, text="Input \nHomework", command= lambda: Learning_User.Homework_Page(self, master)).grid(column=i+1, row=2, rowspan=2)
+    go_Time_Management_page = Button(master, text="Manage \nTime", command= lambda: Learning_User.Time_Management_Page(self, master)).grid(column=i+2, row=2, rowspan=2)
+    go_Priorty_page = Button(master, text="Priorty\nList", command=  lambda: Learning_User.Priorty_Page(self, master)).grid(column=i+3, row=2, rowspan=2)
+    # go_Focus_page = Button(master, text="Focus\nList", command="").grid(column=4, row=2, rowspan=2)
+    go_Grade_Calculater = Button(master, text="Grade\nCalculater", command= lambda: Learning_User.GradeCalculator_Page(self, master)).grid(column=i+4, row=2, rowspan=2)
 
     # estimate_time = 0
     # Hw_Completion_extimated_time = Label(
@@ -83,16 +122,27 @@ class Learning_User(Elder):
 
     class_Label = Label(master, text="Please Enter the Class you are taking,\n separated by a comma")
     class_Label.grid(column=1, row=3)
+
     e_class = Entry(master)
     e_class.insert(END, "Physics 11, Chemistry 12, etc.")
     e_class.grid(column=2, row=3)
+    def get_value():
+      class_list = e_class.get()
+      class_list_to_list = class_list.split(",")
+      with open("classlistdata.txt", "w") as classlist:
+          classlist.write(class_list)
+          classlist.close()
+      print(class_list_to_list[1])
+      print(class_list)
+      return
+    Submit_Button = ttk.Button(master, text="Submit", command= lambda: get_value()).grid(column=3, row=4)
 
 
-
+  
     
 
     welcome_Done = Button(master, text="Next", width=10, command= lambda: Learning_User.Welcome_P2(self, master))
-    welcome_Done.grid(column=1, row=4)
+    welcome_Done.grid(column=1, row=5)
 
 
 
@@ -123,7 +173,9 @@ class Learning_User(Elder):
 
 firstpage = Learning_User(root)
 
+firstpage.Daily_Check_In(root)
 firstpage.Welcome(root)
+
 
 root.mainloop()
 
