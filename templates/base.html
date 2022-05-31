@@ -11,32 +11,39 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="/templates/index.html">Learning Assistance</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/templates/index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/templates/Time.html">Time</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/templates/Homework.html">Homework</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/templates/Priority.html">Priority</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">About</a></li>
+              <li><a class="dropdown-item" href="#">Github</a></li>
+              <li><a class="dropdown-item" href="#">Report A Bug</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Contact</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
-          </li>
+          </li> -->
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,31 +54,34 @@
   </nav>
 
 
-  <h1>{% block home_h1 %}{% endblock %}</h1>
+  <div>
+    {%block mainDiv%}
+    <h1>{% block home_h1 %}{% endblock %}</h1>
 
-  <div id="estimated_time">
-    <p>estimated time to finish all work:</p>
+    <div id="estimated_time">
+      <p>estimated time to finish all work:</p>
 
+    </div>
+
+    <div id="Homework_Section">
+      <h2>Homework for the day</h2>
+      <ul>
+        <li>Homework1</li>
+        <li>homework 2</li>
+        <li>Homework 3</li>
+      </ul>
+    </div> 
+
+    <div id="Priority">
+      <h2>Priority For Now</h2>
+      <ul>
+        <li>P1</li>
+        <li>P 2</li>
+        <li> P3</li>
+      </ul>
+    </div>
+    {% endblock%}
   </div>
-
-  <div id="Homework_Section">
-    <h2>Homework for the day</h2>
-    <ul>
-      <li>Homework1</li>
-      <li>homework 2</li>
-      <li>Homework 3</li>
-    </ul>
-  </div> 
-
-  <div id="Priority">
-    <h2>Priority For Now</h2>
-    <ul>
-      <li>P1</li>
-      <li>P 2</li>
-      <li> P3</li>
-    </ul>
-  </div>
-
 
   <footer>
     <a href="#">Grade Calculater</a>
