@@ -59,6 +59,33 @@
     </div>
   </nav>
 
+  {% with flash_msg = get_flashed_messages(with_categories=true) %}
+    {% if flash_msg %}
+      {% for category, each_msg in flash_msg %}
+        {% if category == "bad" %}
+          <div class="alert alert-danger alter-dismissable fade show" role="alert">
+            {{each_msg}}
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% for category, each_msg in flash_msg %}
+        {% if category == "good" %}
+          <div class="alert alert-sucess alter-dismissable fade show" role="alert">
+            {{each_msg}}
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  
 
   <div>
     {%block mainDiv%}

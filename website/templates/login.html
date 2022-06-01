@@ -2,6 +2,17 @@
 
 {%block mainDiv %}
 
-  <p>this is the login in page</p>
-
+  <form method="post">
+    <h3>Login</h3>
+    <div class="form-group">
+      <label for="email">Enter Email:</label>
+      <input type="email" class="form-control" id="email", name="email", placeholder="email@gmail.com">
+    </div>
+    <div class="form-group">
+      <label for="password">Enter Password</label>
+      <input type="password" class="form-control" id="password", name="password", placeholder="password123">
+    </div>
+    <br>
+    <button type="submit", class="btn btn-primary">Login!</button>
+  </form>
 {%endblock%}

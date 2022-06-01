@@ -9,7 +9,7 @@ views = Blueprint('views', __name__)
 def home():
   return render_template("index.html")
 
-@views.route("/templates/Time.html")
+@views.route("/templates/Time.html ")
 def Time():
   return render_template("Time.html")
 

@@ -2,6 +2,23 @@
 
 {%block mainDiv %}
 
-  <p>this is the sign up page</p>
+  <form method="post">
+    <h3>Sign up</h3>
+    <div class="form-group">
+      <label for="email">Enter Email:</label>
+      <input type="email" class="form-control" id="email", name="email", placeholder="sean@testing.com">
+    </div>
+    <div class="form-group">
+      <label for="password1">Enter Password</label>
+      <input type="password" class="form-control" id="password1", name="password1", placeholder="password123">
+    </div>
+    <div class="form-group">
+      <label for="password2">Comfirm Password</label>
+      <input type="password" class="form-control" id="password2", name="password2", placeholder="Comfirm">
+    </div>
+    <br>
+    <button type="submit", class="btn btn-primary">Join!</button>
+
+  </form>
 
 {%endblock%}
