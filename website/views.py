@@ -1,8 +1,12 @@
 from flask import Blueprint, render_template, redirect, url_for, request, session
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 views = Blueprint('views', __name__)
+
 # views.secret_key = "test"
+
+
+
 
 @views.route("/templates/index.html")
 def home():
