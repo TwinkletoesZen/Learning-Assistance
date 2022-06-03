@@ -26,6 +26,8 @@ def Time():
 def Homework():
   global list_of_HW
   list_of_HW = ""
+  global newHWList
+  newHWList = ""
   if request.method == "POST":
     addedHW = request.form.get("addHW")
     list_of_HW = addedHW.split(",")
@@ -46,7 +48,16 @@ def Homework():
   #     print("Can't Append Item")
   # else:
     print("can't find session")
+
+  # if request.method == "POST":
+  #   addnewHW = request.form.get("addNHW")
+  #   newHWList = addnewHW.split(",")
+  #   list_of_HW = list_of_HW + newHWList
+  # else:
+  #   pass
   return render_template("Homework.html", list_of_HW = list_of_HW)
+
+
 
 @views.route("/templates/Priority.html")
 def Priority():

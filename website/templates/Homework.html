@@ -17,13 +17,26 @@ Homework
       <button class="btn btn-secondary">Clear</button>
     </div>
 
+    
+    <!-- Output the LIst of homework being added, save to list and a file(for the access for the algorithm later) -->
+  </form>
+  <!-- <form method="post">
+    <div class="form-group">
+      <label for="addNHW">Add Homework to Current List:</label>
+      <input class="form-control" type="text" id="addNHW" name="addNHW" placeholder="add newly found Homework here to add to current list">
+      <button type="sumbit" class="btn btn-primary">Submit</button>
+    </div> -->
+
+    
+    <!-- Output the LIst of homework being added, save to list and a file(for the access for the algorithm later) -->
+  </form>
+
+
+
     <p>
       {% for each_HW in list_of_HW %}
         {{each_HW}} <br>
       {% endfor %}
 
     </p>
-    
-    <!-- Output the LIst of homework being added, save to list and a file(for the access for the algorithm later) -->
-  </form>
 {%endblock%}
