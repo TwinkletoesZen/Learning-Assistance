@@ -14,9 +14,13 @@ def home():
 
 @views.route("/templates/Time.html")
 def Time():
-  timeuntilsleep = 0
-  timetocompleteallwork = ""
+
+
+
+  timeuntilsleep = ""
+  timetocompleteallwork = (len(list_of_HW) *1)
   freetimeavaliable = 0
+
 
 
 
