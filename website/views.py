@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, session
 from flask_sqlalchemy import SQLAlchemy
-
+# from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 views = Blueprint('views', __name__)
 
 # views.secret_key = "test"
@@ -65,7 +65,14 @@ def Homework():
 
 @views.route("/templates/Priority.html")
 def Priority():
-  return render_template("Priority.html")
+  urgent_homework = "test"
+
+  #Need to calculate class weighing and sort by large to small
+  #first one is Urgent_HW
+  #next use for loop to print the other
+
+
+  return render_template("Priority.html", Priority = f"Finish {urgent_homework}")
 
 
 @views.route("/") #Redirect must come after the Directed Code

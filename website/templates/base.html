@@ -7,6 +7,7 @@
   <title>{% block title%}{% endblock %}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link href="{{ url_for('static', filename='style/index.css')}}" type="text/css" rel="stylesheet" >
+  <link href="{{ url_for('static', filename='style/homework.css')}}" type="text/css" rel="stylesheet" >
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
@@ -29,17 +30,17 @@
           <li class="nav-item">
             <a class="nav-link" href="/templates/Priority.html">Priority</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/templates/login.html">Login</a>
           </li>          
           <li class="nav-item">
             <a class="nav-link" href="/templates/signup.html">Sign Up</a>
-          </li>
+          </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              More
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="rightNav">
               <li><a class="dropdown-item" href="#">About</a></li>
               <li><a class="dropdown-item" href="#">Github</a></li>
               <li><a class="dropdown-item" href="#">Report A Bug</a></li>
@@ -50,10 +51,15 @@
           <!-- <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li> -->
+          <!-- class="d-flex" -->
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form  class="navbar-nav me-auto mb-2 mb-lg-0" id="rightNav">
+          <li class="nav-item">
+            <a class="nav-link" href="/templates/login.html">Login</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" href="/templates/signup.html">Sign Up</a>
+          </li>
         </form>
       </div>
     </div>
@@ -92,7 +98,7 @@
 
   
 
-  <div>
+  <div class="mx-auto" style='width: 800px; ', id="mainBody">
     {%block mainDiv%}
     <h1>{% block home_h1 %}{% endblock %}</h1>
 
@@ -121,11 +127,11 @@
     {% endblock%}
   </div>
 
-  <footer>
-    <a href="#">Grade Calculater</a>
-    <p>&copy; Sean Yan</p>
-    <a href="https://github.com/Twinkletoeszen">Github</a>
-    <a href=mailto:contact@twinkletoeszen.com>Email</a>
+  <footer id="footer">
+    <!-- <a href="#">Grade Calculater</a> -->
+    <p>&copy;Sean Yan</p>
+    <a href="https://github.com/Twinkletoeszen"><p>Github</p></a>
+    <a href=mailto:contact@twinkletoeszen.com><p>Email</p></a>
   </footer>
 
 
