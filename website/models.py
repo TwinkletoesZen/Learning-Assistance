@@ -11,10 +11,10 @@ class user_homework(db.Model):
   homework = db.Column(db.String(10000))
   #sub field of which Class, connect with the "classes" db
   #ask for input on which class
-  initial_est_time_for_assignment = db.Column(db.Float)
-  average_assignment = db.Column(db.Float)
-  initial_est_time_for_quiz = db.Column(db.Float)
-  initial_est_time_for_exam = db.Column(db.Float)
+  # initial_est_time_for_assignment = db.Column(db.Float)
+  # average_assignment = db.Column(db.Float)
+  # initial_est_time_for_quiz = db.Column(db.Float)
+  # initial_est_time_for_exam = db.Column(db.Float)
   
   #We can store other things, due date and such, time created.
   #a field of the "classes"'s Id, (connection purposes)

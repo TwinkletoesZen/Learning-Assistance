@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, session
 from flask_sqlalchemy import SQLAlchemy
+from . import models
+from . import db
 # from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 views = Blueprint('views', __name__)
 
@@ -7,10 +9,12 @@ views = Blueprint('views', __name__)
 
 
 
-
+#Home Page
 @views.route("/templates/index.html")
 def home():
   return render_template("index.html")
+
+
 
 @views.route("/templates/Time.html")
 def Time():
@@ -37,6 +41,13 @@ def Homework():
     list_of_HW = addedHW.split(",")
     session["all_HW"] = addedHW
 
+
+    store_hw = models.user_homework(homework=addedHW)
+    db.session.add(store_hw)
+    db.session.commit()
+
+
+
     print(session["all_HW"])
   else:
     print("Failed")
@@ -51,6 +62,9 @@ def Homework():
     # else:
   #     print("Can't Append Item")
   # else:
+
+
+  
     print("can't find session")
 
   # if request.method == "POST":
@@ -75,6 +89,15 @@ def Priority():
   return render_template("Priority.html", Priority = f"Finish {urgent_homework}")
 
 
+
+
+@views.route("/templates/Setting.html")
+def Setting():
+  listofclass = ["hI", "2"]
+  return render_template("Setting.html", listofclass = listofclass )
+
+
+#Redirecting user, when they Just Entered the IP
 @views.route("/") #Redirect must come after the Directed Code
 def root():
   return redirect(url_for("views.home"))
