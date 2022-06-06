@@ -74,3 +74,32 @@ body{
   align-content: center;
 
 } */
+
+.btn_on_home{
+  padding-top: 3vh;
+  display: flex;
+
+  flex-direction: column;
+
+  
+
+}
+
+.home_btn{
+  padding: 5vh;
+  background-color: #c4fff1;
+  text-decoration: none;
+  margin: 1.5vh;
+
+}
+
+.home_btn a{
+  text-decoration: none;
+  color: #000000;
+
+}
+
+.home_btn:hover{
+  background-color: aquamarine;
+
+}

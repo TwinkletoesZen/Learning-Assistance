@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, session
+from flask_login import user_accessed
 from flask_sqlalchemy import SQLAlchemy
 from . import models
 from . import db
@@ -12,7 +13,8 @@ views = Blueprint('views', __name__)
 #Home Page
 @views.route("/templates/index.html")
 def home():
-  return render_template("index.html")
+  user = "Sean"
+  return render_template("index.html", user = user)
 
 
 

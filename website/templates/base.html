@@ -104,30 +104,14 @@
 
   <div class="mx-auto" style='width: 800px; ', id="mainBody">
     {%block mainDiv%}
-    <h1>{% block home_h1 %}{% endblock %}</h1>
-
-    <div id="estimated_time">
-      <p>estimated time to finish all work:</p>
-
-    </div>
-
-    <div id="Homework_Section">
-      <h2>Homework for the day</h2>
-      <ul>
-        <li>Homework1</li>
-        <li>homework 2</li>
-        <li>Homework 3</li>
-      </ul>
-    </div> 
-
-    <div id="Priority">
-      <h2>Priority For Now</h2>
-      <ul>
-        <li>P1</li>
-        <li>P 2</li>
-        <li> P3</li>
-      </ul>
-    </div>
+      <h1>Home</h1>
+      <p>Welcome {{user}}</p>
+      <div class="btn_on_home">
+        <button class="home_btn"><a href="/templates/Time.html">Time</a></button>
+        <button class="home_btn"><a href="/templates/Homework.html">Homework</a></button>
+        <button class="home_btn"><a href="/templates/Priority.html">Priority</a></button>
+        <button class="home_btn"><a href="/templates/Setting.html">Setting</a></button>
+      </div>
     {% endblock%}
   </div>
 
