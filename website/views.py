@@ -45,29 +45,28 @@ def Homework():
 
 
     store_hw = models.user_homework(homework=addedHW)
-    db.session.add(store_hw)
+    db.session.add(store_hw) #what do these do again?
     db.session.commit()
 
 
 
     print(session["all_HW"])
   else:
-    print("Failed")
+    pass
 
-  if "all_HW" in session:
-    addedHW = session["all_HW"]
-    list_of_HW = addedHW.split(",")
-    # if request.method == "POST":
-    #   newlyaddedhw = request.form.get("addHW")
-    #   newlyaddedlist = newlyaddedhw.split(",")
-    #   list_of_HW.append(newlyaddedlist)
-    # else:
-  #     print("Can't Append Item")
+  # bruh = store_hw.query
+
+  # if "all_HW" in session:
+  #   addedHW = session["all_HW"]
+  #   list_of_HW = addedHW.split(",")
+  #   # if request.method == "POST":
+  #   #   newlyaddedhw = request.form.get("addHW")
+  #   #   newlyaddedlist = newlyaddedhw.split(",")
+  #   #   list_of_HW.append(newlyaddedlist)
+  #   # else:
+  # #     print("Can't Append Item")
   # else:
-
-
-  
-    print("can't find session")
+  #   print("can't find session")
 
   # if request.method == "POST":
   #   addnewHW = request.form.get("addNHW")

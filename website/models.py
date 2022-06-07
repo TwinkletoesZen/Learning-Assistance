@@ -33,7 +33,7 @@ class user_homework(db.Model):
 class classes(db.Model):
   id = db.Column(db.Integer, primary_key = True)
   classes = db.Column(db.String(1000))
-  Weighing = db.Column(db.String(1000))
+  # Weighing = db.Column(db.String(1000))
 
 
 # class sign_up_form(db.Model):
