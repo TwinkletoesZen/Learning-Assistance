@@ -13,7 +13,7 @@ def create_app():
   #initlize Db
   db.init_app(app)
 
-
+  #hey if you read this, thank you for coming to my Capstone :D
 
 
   from .views import views
@@ -23,7 +23,7 @@ def create_app():
   app.register_blueprint(auth, url_prefix = "/")
 
 
-  from .models import user_homework #making the model run, before database creation
+  from .models import course, User, user_homework #making the model run, before database creation
   
   create_database(app)
 
@@ -34,6 +34,7 @@ def create_app():
 #creating our database:
 
 def create_database(app):
+  db.create_all(app=app)
   #checking if the db alr have exist
-  if not path.exists("website/" + DB_NAME): #if data doesn't exist
-    db.create_all(app=app)
+  # if not path.exists("website/" + DB_NAME): #if data doesn't exist
+  #   db.create_all(app=app)

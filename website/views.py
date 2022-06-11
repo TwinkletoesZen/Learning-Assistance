@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template, redirect, url_for, request, session
+
+
+from flask import Blueprint, render_template, redirect, request_started, url_for, request, session
 from flask_login import user_accessed
 from flask_sqlalchemy import SQLAlchemy
 from . import models
@@ -45,7 +47,7 @@ def Homework():
 
 
     store_hw = models.user_homework(homework=addedHW)
-    db.session.add(store_hw) #what do these do again?
+    db.session.add(store_hw) #what do these do again? #for this to work, we need to have a session stored
     db.session.commit()
 
 
@@ -56,17 +58,17 @@ def Homework():
 
   # bruh = store_hw.query
 
-  # if "all_HW" in session:
-  #   addedHW = session["all_HW"]
-  #   list_of_HW = addedHW.split(",")
-  #   # if request.method == "POST":
-  #   #   newlyaddedhw = request.form.get("addHW")
-  #   #   newlyaddedlist = newlyaddedhw.split(",")
-  #   #   list_of_HW.append(newlyaddedlist)
-  #   # else:
-  # #     print("Can't Append Item")
-  # else:
-  #   print("can't find session")
+  if "all_HW" in session:
+    addedHW = session["all_HW"]
+    list_of_HW = addedHW.split(",")
+    # if request.method == "POST":
+    #   newlyaddedhw = request.form.get("addHW")
+    #   newlyaddedlist = newlyaddedhw.split(",")
+    #   list_of_HW.append(newlyaddedlist)
+    # else:
+  #     print("Can't Append Item")
+  else:
+    print("can't find session")
 
   # if request.method == "POST":
   #   addnewHW = request.form.get("addNHW")
@@ -90,6 +92,29 @@ def Priority():
   return render_template("Priority.html", Priority = f"Finish {urgent_homework}")
 
 
+@views.route("/templates/Course.html", methods = ["GET", "POST"])
+def Course():
+
+  
+
+
+  
+
+  if request.method == "POST":
+    user_enter_course = request.form.get("courses") #this has be the "input div" with the "id or Name" atr
+    course_list = (user_enter_course).split(",")
+    print(course_list)
+
+    session["k_course_list"] = user_enter_course
+    store_user_enter_course = models.course(course_name=user_enter_course)
+    db.session.add(store_user_enter_course)
+    db.session.commit()
+
+  else:
+    print("Fail to add courses")
+
+
+  return render_template("Course.html")
 
 
 @views.route("/templates/Setting.html")
