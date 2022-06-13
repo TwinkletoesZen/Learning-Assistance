@@ -42,12 +42,8 @@ class user_homework(db.Model):
 
 class course(db.Model):
   id = db.Column(db.Integer, primary_key = True)
-  course_name = db.Column(db.String(1000)) #One to Many, with relation to "user_homework"
-
-
-
-
-  # homework = db.Column(db.String(10000))
+  course_name = db.Column(db.String(1000)) #One to Many, with relation to "user_homework
+  homework = db.Column(db.String(10000))
 
 
   # def __init__(self, course_name):
