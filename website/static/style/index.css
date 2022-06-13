@@ -20,6 +20,7 @@ body{
 #mainBody{
   margin-top: 5%;
   text-align: center;
+  /* display: flex; */
   /* margin-bottom: auto; */
 }
 
@@ -79,14 +80,14 @@ body{
   padding-top: 3vh;
   display: flex;
 
-  flex-direction: column;
-
+  flex-direction: row;
+  justify-content: center;
   
 
 }
 
 .home_btn{
-  padding: 5vh;
+  padding: 5vh 5vw;
   background-color: #c4fff1;
   text-decoration: none;
   margin: 1.5vh;

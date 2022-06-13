@@ -110,9 +110,6 @@ def Course():
     db.session.add(store_user_enter_course)
     db.session.commit()
 
-  else:
-    print("Fail to add courses")
-
 
   return render_template("Course.html")
 
