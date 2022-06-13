@@ -9,7 +9,7 @@ Homework
   <h1>Homework Section</h1>
   <p>Please add all your Homework in this Section, separated with a comma</p>
 
-  <form method="post">
+  <!-- <form method="post">
     <div class="form-group">
       <label for="addHW">Homework:</label>
       <input class="form-control" type="text" id="addHW" name="addHW" placeholder="ex: Chem12 Worksheet, Physics 12 Unit 8 Worksheet, English Hamlet 500 Word Essay">
@@ -18,9 +18,9 @@ Homework
     </div>
 
     
-    <!-- Output the LIst of homework being added, save to list and a file(for the access for the algorithm later) -->
-  </form>
-  <!-- <form method="post">
+    <Output the LIst of homework being added, save to list and a file(for the access for the algorithm later) -->
+  <!-- </form>
+   <form method="post">
     <div class="form-group">
       <label for="addNHW">Add Homework to Current List:</label>
       <input class="form-control" type="text" id="addNHW" name="addNHW" placeholder="add newly found Homework here to add to current list">
@@ -29,14 +29,45 @@ Homework
 
     
     <!-- Output the LIst of homework being added, save to list and a file(for the access for the algorithm later) -->
-  </form>
+  <!-- </form> -->
 
-
-
-    <p>
+    <!-- <p>
       {% for each_HW in list_of_HW %}
         {{each_HW}} <br>
       {% endfor %}
 
-    </p>
+    </p> -->
+
+
+
+
+  <table>
+    <tr>
+      <th>Class</th>
+      <th>Homework</th>
+    </tr>
+
+
+
+    
+      {% for each_Course in list_of_Course %}
+        <tr>
+          <td>{{each_Course}}</td>
+          <td>
+            <form>
+              <label for=""></label>
+              <input type="text", class="form-control" id="hw_in_course" name="hw_in_course", placeholder="please enter you homework">
+
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+
+
+
+
+
+
+
+  </table>
 {%endblock%}

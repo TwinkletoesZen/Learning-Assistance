@@ -70,13 +70,30 @@ def Homework():
   else:
     print("can't find session")
 
+
+
+#Bridge between Cuorse Page and homework page
+
+  if "k_course_list" in session:
+    all_Course = session["k_course_list"]
+    list_of_Course = all_Course.split(",")
+
+    
+
+
+
+
+
+
+
+
   # if request.method == "POST":
   #   addnewHW = request.form.get("addNHW")
   #   newHWList = addnewHW.split(",")
   #   list_of_HW = list_of_HW + newHWList
   # else:
   #   pass
-  return render_template("Homework.html", list_of_HW = list_of_HW)
+  return render_template("Homework.html", list_of_HW = list_of_HW, list_of_Course = list_of_Course)
 
 
 
@@ -94,12 +111,6 @@ def Priority():
 
 @views.route("/templates/Course.html", methods = ["GET", "POST"])
 def Course():
-
-  
-
-
-  
-
   if request.method == "POST":
     user_enter_course = request.form.get("courses") #this has be the "input div" with the "id or Name" atr
     course_list = (user_enter_course).split(",")
