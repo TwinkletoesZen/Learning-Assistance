@@ -15,9 +15,9 @@ import sqlalchemy
 
 
 
-class user_homework(db.Model):
-  id = db.Column(db.Integer, primary_key = True) #THIS IS IMPORTANT
-  homework = db.Column(db.String(10000))
+# class user_homework(db.Model):
+#   id = db.Column(db.Integer, primary_key = True) #THIS IS IMPORTANT
+#   homework = db.Column(db.String(10000))
 
   #sub field of which Class, connect with the "classes" db
   #ask for input on which class
@@ -44,6 +44,7 @@ class course(db.Model):
   id = db.Column(db.Integer, primary_key = True)
   course_name = db.Column(db.String(1000)) #One to Many, with relation to "user_homework
   homework = db.Column(db.String(10000))
+  # weight = db.Column(db.Integer)
 
 
   # def __init__(self, course_name):
@@ -62,11 +63,11 @@ class course(db.Model):
 
 
 
-class User(db.Model, UserMixin):
-  id = db.Column(db.Integer, primary_key = True)
-  email = db.Column(db.String(150), unique=True)
-  password = db.Column(db.String(150))
-  # courses = db.relationship("Cources")
+# class User(db.Model, UserMixin):
+#   id = db.Column(db.Integer, primary_key = True)
+#   email = db.Column(db.String(150), unique=True)
+#   password = db.Column(db.String(150))
+#   # courses = db.relationship("Cources")
   #connection to Courses
 
   #Forigen Key that reference anothor "Column" 

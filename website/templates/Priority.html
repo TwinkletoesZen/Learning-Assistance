@@ -9,7 +9,7 @@ Priority
   <p>Next List of Priority:</p>
   
   {% for each_HW in allhw %}
-    <p>{{each_HW}}</p>
+    <p class="pri_hw_list">{{each_HW.course_name}} : <strong>{{each_HW.homework}}</strong></p>
 
   {% endfor %}
 {% endblock %}

@@ -26,7 +26,7 @@ def create_app():
   app.register_blueprint(auth, url_prefix = "/")
 
 
-  from .models import course, User, user_homework #making the model run, before database creation
+  from .models import course #making the model run, before database creation
   
   create_database(app)
 

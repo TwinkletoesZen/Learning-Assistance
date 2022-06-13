@@ -104,3 +104,9 @@ body{
   background-color: aquamarine;
 
 }
+
+#pri_hw_list p{
+  font-size: 4vh;
+
+  color: blue;
+}
