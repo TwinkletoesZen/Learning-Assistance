@@ -128,7 +128,8 @@ def Homework():
 def Time():
 
   if "k_hw_in_MATH" in session:
-    entered_hw_list = session["k_hw_in_MATH"]
+    entered_hw = session["k_hw_in_MATH"]
+    entered_hw_list = entered_hw.split(",")
     
     year_now = 2022
     month_now = 6
@@ -136,7 +137,7 @@ def Time():
 
     time_now = datetime.datetime.now()
     bed_time = datetime.datetime(year_now, month_now, day_now, 23)
-    homework_time = ((len(entered_hw_list)-1)* 2)
+    homework_time = ((len(entered_hw_list))* 2)
     print(len(entered_hw_list))
     print(entered_hw_list)
     print(homework_time)
