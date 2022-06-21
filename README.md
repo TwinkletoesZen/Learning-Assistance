@@ -10,3 +10,5 @@ Sean's Learning Assistance is a web app that aims to help student time managemen
 - CSS
 - Bootstrap
 
+## Citation
+I followed https://www.youtube.com/watch?v=dam0GPOAvVI&t=6663s 's guide
